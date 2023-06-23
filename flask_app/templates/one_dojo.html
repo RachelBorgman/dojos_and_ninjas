@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Dojo</title>
+</head>
+<body>
+    <h1>Dojo {{dojo.name}}</h1>
+        <p>Dojo ID: {{dojo['id']}}</p>
+        <p>Dojo Name: {{dojo.name}}</p>
+        <p>Created At: {{dojo.created_at}}</p>
+    <a href="/edit_dojo/{{dojo.id}}">Edit</a> | <a href="/delete_dojo/{{dojo.id}}">Delete</a>
+    <hr>
+
+    <h1>All {{dojo.name}} Ninjas</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date Created</th>
+                <th>Date Updated</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for one_ninja in dojo.ninjas %}
+            <tr>
+                    <td>{{one_ninja.id}}</td>
+                    <td>{{one_ninja.first_name}}</td>
+                    <td>{{one_ninja.last_name}}</td>
+                    <td>{{one_ninja.age}}</td>
+                    <td>{{one_ninja.created_at}}</td>
+                    <td>{{one_ninja.updated_at}}</td>
+                    <td><a href="/one_ninja/{{one_ninja.id}}">View</a> | <a href="/edit_ninja/{{one_ninja.id}}">Edit</a> | <a href="/delete_ninja/{{one_ninja.id}}">Delete</a></td>
+            </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/create_ninja">Add a New Ninja</a>
+    <a href="/dojos">Home</a>
+</body>
+</html>

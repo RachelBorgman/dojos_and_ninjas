@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update a Ninja</title>
+</head>
+<body>
+    <h1>Update a Ninja: {{ninja['first_name']}}</h1>
+    <a href="/">Home</a>
+        <form action="/update_ninja/{{ninja['id']}}" method="POST">
+            <input type="hidden" name="id" value="{{ninja['id']}}">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" value="{{ninja['first_name']}}">
+                <input type="hidden" name="id" value="{{ninja['id']}}">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" value="{{ninja['last_name']}}">
+                <input type="hidden" name="id" value="{{ninja['id']}}">
+                <label for="age">Age:</label>
+                <input type="text" name="age" value="{{ninja['age']}}">
+                <label for="dojo">Dojo:</label><br>
+                <select name="dojo_id" id="dojo_id">
+                    <option value="{{ninja['dojo_id']}}"></option>
+                {% for dojos in all_dojos %}
+                    <option value="{{dojos.id}}">{{dojos.name}}</option>
+                {% endfor %}
+                </select>
+            <input type="submit" value="Update Ninja">
+        </form> 
+
+</body>
+</html>

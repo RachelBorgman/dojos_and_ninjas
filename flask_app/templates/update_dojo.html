@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Dojo</title>
+</head>
+<body>
+    <h1>Update a Dojo: {{dojo.dojo_name}}</h1>
+    <a href="/">Home</a>
+        <form action="/update_dojo" method="POST">
+            <input type="hidden" name="id" value="{{dojo.id}}">
+                <label for="dojo_name">Dojo Name:</label>
+            <input type="submit" value="Update Dojo">
+        </form> 
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Ninja</title>
+</head>
+<body>
+    <h1>Ninja {{ninja.name}}</h1>
+        <p>Ninja ID: {{ninja.id}}</p>
+        <p>Ninja First Name: {{ninja.first_name}}</p>
+        <p>Ninja Last Name: {{ninja.last_name}}</p>
+        <p>Ninja Age: {{ninja.age}}</p>
+        <p>Created At: {{ninja.created_at}}</p>
+        <p>Dojo ID: {{ninja.dojo_id}}</p>
+    <a href="/edit_ninja/{{ninja.id}}">Edit</a> | <a href="/delete_ninja/{{ninja.id}}">Delete</a>
+ 
+    <a href="/dojos">Home</a>
+</body>
+</html>
